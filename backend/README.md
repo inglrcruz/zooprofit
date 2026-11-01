@@ -1,6 +1,6 @@
-# FarmProfit API
+# ZooProfit API
 
-API en Go + MySQL que reemplaza a Firebase (Auth + Firestore) para la app FarmProfit.
+API en Go + MySQL que reemplaza a Firebase (Auth + Firestore) para la app ZooProfit.
 
 ## Arrancar
 
@@ -15,7 +15,7 @@ API=http://localhost:8080 scripts/smoke.sh   # prueba de extremo a extremo (base
 
 ```bash
 python3 scripts/firestore2sql.py ~/Desktop/PigProfit/firestore-export --password '1234' > import.sql
-docker exec -i mysql_farmprofit sh -c 'mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' < import.sql
+docker exec -i mysql_zooprofit sh -c 'mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' < import.sql
 ```
 
 Arranca el API una vez antes, para que existan las tablas. El archivo es una sola transacción: carga todo o nada,

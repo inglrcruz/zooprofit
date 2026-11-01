@@ -1,8 +1,8 @@
 services:
 
-  mysql_farmprofit:
+  mysql_zooprofit:
     image: mysql:8.4
-    container_name: mysql_farmprofit
+    container_name: mysql_zooprofit
     ports:
       - "127.0.0.1:${MYSQL_PORT}:3306"
     environment:
@@ -12,7 +12,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - mysql_farmprofit:/var/lib/mysql
+      - mysql_zooprofit:/var/lib/mysql
 
 volumes:
-  mysql_farmprofit:
+  mysql_zooprofit:

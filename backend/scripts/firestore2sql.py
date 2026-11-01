@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Turns the Firestore export of PigProfit into SQL for the FarmProfit schema.
+"""Turns the Firestore export of PigProfit into SQL for the ZooProfit schema.
 
     python3 scripts/firestore2sql.py ~/Desktop/PigProfit/firestore-export --password '1234' > import.sql
-    mysql -h127.0.0.1 -P3310 -ufarmprofit -p farmprofit < import.sql
+    mysql -h127.0.0.1 -P3310 -uzooprofit -p zooprofit < import.sql
 
 Run the API once first so the tables exist. The file is one transaction: it
 loads completely or not at all, and loading it twice fails on the first

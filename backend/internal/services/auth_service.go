@@ -24,7 +24,7 @@ type AuthService struct {
 }
 
 func NewAuthService(users *repositories.UserRepository, farms *repositories.FarmRepository, secret string, ttl time.Duration) *AuthService {
-	dummy, _ := bcrypt.GenerateFromPassword([]byte("farmprofit"), bcrypt.DefaultCost)
+	dummy, _ := bcrypt.GenerateFromPassword([]byte("zooprofit"), bcrypt.DefaultCost)
 	return &AuthService{users, farms, []byte(secret), ttl, dummy}
 }
 
@@ -133,7 +133,7 @@ func (s *AuthService) Join(in JoinInput) (*Session, error) {
 		}
 		u.Phone = &phone
 	} else {
-		email := "emp" + inv.Code + "@farmprofit.app"
+		email := "emp" + inv.Code + "@zooprofit.app"
 		u.Email = &email
 	}
 	if err := setPassword(u, in.Password); err != nil {

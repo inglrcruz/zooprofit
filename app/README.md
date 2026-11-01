@@ -1,6 +1,6 @@
-# FarmProfit · app
+# ZooProfit · app
 
-App Expo (iOS, Android y web) de FarmProfit. Todos los datos vienen del API propio en `../backend`.
+App Expo (iOS, Android y web) de ZooProfit. Todos los datos vienen del API propio en `../backend`.
 
 ## Arrancar
 
@@ -51,7 +51,7 @@ Pruebas de extremo a extremo en navegador (necesitan Playwright, que no es depen
 ```bash
 EXPO_PUBLIC_API_URL=http://localhost:8099/ npx expo export --platform web --output-dir /tmp/fp-web
 node scripts/e2e/serve.mjs /tmp/fp-web &          # sirve en :8098
-mkdir -p /tmp/farmprofit-e2e
+mkdir -p /tmp/zooprofit-e2e
 NODE_PATH=$(npm root -g) node scripts/e2e/app.cjs
 NODE_PATH=$(npm root -g) node scripts/e2e/offline.cjs    # corta el API, registra, reabre, reconecta
 ```

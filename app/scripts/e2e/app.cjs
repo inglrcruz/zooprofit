@@ -8,9 +8,9 @@ const ymd = (d) => { const x = new Date(Date.now() + d * 864e5); return `${x.get
   const errors = [];
   page.on('pageerror', (e) => errors.push('pageerror: ' + e.message.slice(0, 160)));
   page.on('response', (r) => r.status() >= 400 && r.url().includes(':8099') && errors.push(`http ${r.status()} ${r.request().method()} ${r.url()}`));
-  const step = async (name, fn) => { try { await fn(); console.log('ok  ', name); } catch (e) { console.log('FAIL', name, '-', e.message.split('\n').slice(0, 14).join('\n')); await page.screenshot({ path: `/tmp/farmprofit-e2e/fail-${name.replace(/\W+/g, '_')}.png` }); throw e; } };
+  const step = async (name, fn) => { try { await fn(); console.log('ok  ', name); } catch (e) { console.log('FAIL', name, '-', e.message.split('\n').slice(0, 14).join('\n')); await page.screenshot({ path: `/tmp/zooprofit-e2e/fail-${name.replace(/\W+/g, '_')}.png` }); throw e; } };
   const settle = () => page.waitForTimeout(500);
-  const shot = async (n) => { await settle(); await page.screenshot({ path: `/tmp/farmprofit-e2e/${n}.png` }); };
+  const shot = async (n) => { await settle(); await page.screenshot({ path: `/tmp/zooprofit-e2e/${n}.png` }); };
   const vis = (l) => l.filter({ visible: true }).last();
   const ph = (...a) => vis(page.getByPlaceholder(...a)), tx = (...a) => vis(page.getByText(...a)), rl = (...a) => vis(page.getByRole(...a)), lb = (...a) => vis(page.getByLabel(...a));
   const btn = (name) => rl('button', { name, exact: true });

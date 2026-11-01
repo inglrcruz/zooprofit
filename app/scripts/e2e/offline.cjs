@@ -4,9 +4,9 @@ const tag = Date.now() % 100000;
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 420, height: 900 } });
-  const step = async (name, fn) => { try { await fn(); console.log('ok  ', name); } catch (e) { console.log('FAIL', name, '-', e.message.split('\n').slice(0, 6).join('\n')); await page.screenshot({ path: `/tmp/farmprofit-e2e/fail-${name.replace(/\W+/g, '_')}.png` }); throw e; } };
+  const step = async (name, fn) => { try { await fn(); console.log('ok  ', name); } catch (e) { console.log('FAIL', name, '-', e.message.split('\n').slice(0, 6).join('\n')); await page.screenshot({ path: `/tmp/zooprofit-e2e/fail-${name.replace(/\W+/g, '_')}.png` }); throw e; } };
   const settle = (ms = 500) => page.waitForTimeout(ms);
-  const shot = async (n) => { await settle(); await page.screenshot({ path: `/tmp/farmprofit-e2e/${n}.png` }); };
+  const shot = async (n) => { await settle(); await page.screenshot({ path: `/tmp/zooprofit-e2e/${n}.png` }); };
   const vis = (l) => l.filter({ visible: true }).last();
   const ph = (...a) => vis(page.getByPlaceholder(...a)), tx = (...a) => vis(page.getByText(...a)), rl = (...a) => vis(page.getByRole(...a));
   const btn = (name) => rl('button', { name, exact: true });
