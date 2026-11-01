@@ -1,0 +1,35 @@
+# Environment and secrets (app + backend)
+.env
+.env.*
+!.env.example
+*-service-account*.json
+*firebase-adminsdk*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# app (Expo / React Native)
+app/node_modules/
+app/.expo/
+app/dist/
+app/web-build/
+app/ios/
+app/android/
+*.keystore
+
+# backend (Go)
+backend/tmp/
+backend/bin/
+backend/import.sql
+*.exe
+*.test
+*.out
+__pycache__/
